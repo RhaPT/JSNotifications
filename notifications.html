@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/notifications.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/all.min.css">
+
+	<script src="assets/notifications.min.js" type="text/javascript"></script>
+	
+	<title>Notifications Test File</title>
+	
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			outline: 0;
+			list-style: none;
+			box-sizing: border-box;
+			
+			/* Works on Firefox */
+			scrollbar-width: thin;
+			scrollbar-color: rgba(111, 14, 147, 0.473) rgba(47, 47, 48);
+		}
+		/* Works on Chrome, Edge, and Safari */
+		*::-webkit-scrollbar {
+			width: 12px;
+		}
+		*::-webkit-scrollbar-track {
+			background: rgb(47, 47, 48);
+		}
+		*::-webkit-scrollbar-thumb {
+			background-color: rgb(47, 47, 48);
+			border-radius: 20px;
+			border: 3px solid rgba(111, 14, 147, 0.473);
+		}  
+		html, body {
+			height: 100%;
+			min-height: 100vh;
+			width: 100%;
+			min-width: 100vw;
+		}  
+		body {
+			font-family:'Roboto', sans-serif !important;
+			color: rgb(236, 236, 236) !important;
+			background-color: rgb(29, 29, 29);
+			background: linear-gradient(142deg, rgb(29, 29, 29) 75%, rgba(110, 1, 135, 1) 150%);
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			padding: 0;
+			overflow-x: hidden !important;
+		}
+		.bellDiv {
+			position: fixed;
+			left: 20px;
+			bottom: 50px;
+		}
+		.bellDiv i {
+			font-size: 24px;
+			color:rgb(215, 215, 215);
+		}
+		.bellDiv i:hover {
+			color:rgb(255, 72, 0);
+			cursor: pointer;
+		}
+		/* For Firefox */
+		progress {
+    		height: 4px;
+    		background: transparent;
+    		border: 1px solid #606060;
+		}
+		progress::-moz-progress-bar {
+    		background-color: rgb(0, 241, 0) !important;
+		}
+		/* For Chrome or Safari */
+		progress::-webkit-progress-bar {
+    		height: 4px;
+    		background-color: transparent;
+    		border: 1px solid #606060;
+		}
+		progress::-webkit-progress-value {
+    		background-color: rgb(0, 241, 0) !important;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="bellDiv">
+		<i title="Show Notification History" onclick="Notify.showLastNotifications();" class="far fa-bell"></i>
+	</div>
+	<script>
+		// OnLoad
+		window.onload = function() {
+			Notify = new Notifications();
+			Notify.setTemporaryOff();
+			Notify.addNotification("04", "Warning", "Notification 04 - Dont Show");
+			Notify.cancelTemporaryOff();
+			Notify.addNotification("01", "Alert", "Notification 01");
+			Notify.addNotification("06", "Info", "Notification 06", 0);
+			Notify.addNotification("02", "Info", "Notification 02 MultiLine<br><progress value='50' max='100'></progress>");
+			Notify.addNotification("03", "OK", "Notification 03", 10);
+			
+			setTimeout(function() { Notify.delNotification("03");}, 2000);
+			setTimeout(function() { Notify.addNotification("02", "Info", "Notification 02 MultiLine<br><progress value='75' max='100'></progress>", 10);}, 2000);
+			setTimeout(function() { Notify.addNotification("02", "Info", "Notification 02 MultiLine<br><progress value='100' max='100'></progress>", 10);}, 4000);
+			setTimeout(function() { Notify.addNotification("02", "Info", "Notification 02 MultiLine<br>Process Complete!", 10);}, 6000);
+			setTimeout(function() { Notify.addNotification("06", "Alert", "Change 06 Notification", 10);}, 2000);
+			setTimeout(function() { Notify.addNotification("05", "Warning", "Notification 05", 10);}, 4000);
+		}
+    </script>
+</body>
+</html>

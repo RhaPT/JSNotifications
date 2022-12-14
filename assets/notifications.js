@@ -28,7 +28,7 @@ class Notifications {
     getDate() {
         var xDate = new Date();
         var sM = "00" + (xDate.getMonth() + 1);
-        var sD = "00" + xDate.getDay();
+        var sD = "00" + xDate.getDate();
         var sh = "00" + xDate.getHours();
         var sm = "00" + xDate.getMinutes();
         var ss = "00" + xDate.getSeconds();

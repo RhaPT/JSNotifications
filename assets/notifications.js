@@ -77,18 +77,20 @@ class Notifications {
             // Verify id Notification Exist
             var index = this.getIndexOfK(this.NotificationsArray, NotificationID);
             if (index > -1) { // only splice array when item is found
-                // Exist Only Update
+                // ID exist go make update
                 this.updateNotification(NotificationID, NotificationType, NotificationText, NotificationTime);
                 return
             }
-            // Verify if need delete first notification
-            if (((this.NotificationsArray.length + 1) * 80) + 55 > document.documentElement.clientHeight) {
-                this.delNotification(this.NotificationsArray[0][0]);
-            }
-            // Change Position of All Notifications
-            for (var i = 0; i < this.NotificationsArray.length; i++) {
-                var xBt = (55 + ((this.NotificationsArray.length - i) * 80)) + 'px';
-                document.getElementById("notify_" + this.NotificationsArray[i][0]).style.bottom = xBt;
+            if(this.NotificationsArray.length > 0) {
+                // Verify if need delete first notification
+                if (((this.NotificationsArray.length + 1) * 80) + 55 > document.documentElement.clientHeight) {
+                    this.delNotification(this.NotificationsArray[0][0]);
+                }
+                // Change Position of All Notifications
+                for (var i = 0; i < this.NotificationsArray.length; i++) {
+                    var xBt = (55 + ((this.NotificationsArray.length - i) * 80)) + 'px';
+                    document.getElementById("notify_" + this.NotificationsArray[i][0]).style.bottom = xBt;
+                }
             }
             // Create New Notification
             let div = document.createElement("div");

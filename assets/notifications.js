@@ -190,13 +190,13 @@ class Notifications {
 
     // Get Icon Notification Type
     getNotificationIcon(NotificationType) {
-        if (NotificationType == "Alert") {
+        if (NotificationType.toLowerCase() == "alert") {
             return "fas fa-exclamation-triangle"
-        } else if (NotificationType == "Info") {
+        } else if (NotificationType.toLowerCase() == "info") {
             return "fas fa-info-circle"
-        } else if (NotificationType == "Warning") {
+        } else if (NotificationType.toLowerCase() == "warning") {
             return "fas fa-skull-crossbones"
-        } else if (NotificationType == "OK") {
+        } else if (NotificationType.toLowerCase() == "ok") {
             return "far fa-check-circle"
         }
     };

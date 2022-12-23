@@ -89,7 +89,7 @@ Notify.stateNotifications(false)
 
 ***
 
-#### getStateNotification()
+#### getStateNotifications()
 
 Get Notifications state, return true or false
 
@@ -101,7 +101,7 @@ _Hide (Temporary) Notifications_
 
 ***
 
-#### getTemporaryStateNotification()
+#### getTemporaryState()
 
 Get Temporary Notifications state, return true or false
 

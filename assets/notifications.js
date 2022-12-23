@@ -40,7 +40,7 @@ class Notifications {
         this.displayNotifications = state;
     };
 
-    getStateNotifications() {
+    getNotificationsState() {
         return this.displayNotifications;
     };
 

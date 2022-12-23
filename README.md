@@ -9,7 +9,7 @@ Html notifications pure javascript.
 - [Notification Types](#notification-types)
 - [Notifications Methods](#all-notifications-methods)
     - [stateNotifications](#statenotificationstruefalse)
-    - [getStateNotifications](#getStateNotifications)
+    - [getNotificationsState](#getNotificationsState)
     - [setTemporaryOff](#setTemporaryOff)
     - [getTemporaryState](#getTemporaryState)
     - [cancelTemporaryOff](#cancelTemporaryOff)
@@ -89,7 +89,7 @@ Notify.stateNotifications(false)
 
 ***
 
-#### getStateNotifications()
+#### getNotificationsState()
 
 Get Notifications state, return true or false
 

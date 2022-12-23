@@ -40,7 +40,7 @@ class Notifications {
         this.displayNotifications = state;
     };
 
-    getStateNotification() {
+    getStateNotifications() {
         return this.displayNotifications;
     };
 
@@ -55,7 +55,7 @@ class Notifications {
     };
 
     // Get Temporary state 
-    getTemporaryStateNotification() {
+    getTemporaryState() {
         return this.temporaryNotificationsOff;
     };
 

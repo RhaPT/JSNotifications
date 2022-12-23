@@ -40,6 +40,10 @@ class Notifications {
         this.displayNotifications = state;
     };
 
+    getStateNotification() {
+        return this.displayNotifications;
+    };
+
     // Cancel setTemporaryOff
     cancelTemporaryOff() {
         this.temporaryNotificationsOff = false;
@@ -48,6 +52,11 @@ class Notifications {
     // Temporary off Display Notification
     setTemporaryOff() {
         this.temporaryNotificationsOff = true;
+    };
+
+    // Get Temporary state 
+    getTemporaryStateNotification() {
+        return this.temporaryNotificationsOff;
     };
 
     // Create/Update LastNotifications Array
